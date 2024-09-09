@@ -20,6 +20,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Template
+### Figma template
+https://www.figma.com/design/UUXK7tusGRqyNoxg1VcdqL/xonad?node-id=0-1&node-type=CANVAS&t=U1H24Olo3NLq4ic8-0
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

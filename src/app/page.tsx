@@ -2,8 +2,10 @@ import Grid from "@mui/material/Grid2";
 
 export default function Home() {
   return (
-    <Grid container spacing={1} px={5} py={3} flexGrow={5} my={3}>
-      <Grid size={{ xs: 12, sm: 6, md: 7 }} alignItems={'stretch'} flexGrow={0}>
+    <Grid container spacing={1} p={2}
+    paddingRight={0}
+     py={3} flexGrow={5} my={3}>
+      <Grid size={{ xs: 12, sm: 7, md: 8 }} alignItems={'stretch'} flexGrow={0}>
         <div className='container' >
           <h1>We are Xonad Baltic!</h1>
           <p>
@@ -15,13 +17,12 @@ export default function Home() {
 
           </p></div>
       </Grid>
-      <Grid size={{ sm: 1 }}></Grid>
       <Grid display={{ xs: 'none', sm: 'flex' }} flexDirection={'column'}
         flexGrow={2}
 
         size={{ xs: 12, sm: 5, md: 4 }}
-        justifyContent={{ xs: 'baseline', md: 'flex-start' }}
-        alignSelf={{ xs: 'baseline', md: 'flex-start' }}
+        justifyContent={{ xs: 'baseline', md: 'flex-end' }}
+        alignSelf={{ xs: 'baseline', md: 'flex-end' }}
         marginTop={5} >
         <div className='gates'>&nbsp;</div>
       </Grid>

@@ -12,6 +12,7 @@ import Container from "@mui/material/Container"
 import MenuItem from "@mui/material/MenuItem/MenuItem"
 import { XBLogo } from "./logo"
 
+
 const pages = ['Products', 'Pricing', 'Blog'];
 export const Header = (): JSX.Element => {
 
@@ -35,7 +36,7 @@ export const Header = (): JSX.Element => {
             <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-            <XBLogo width={90}  />
+            <XBLogo width={100}  />
           <Typography
             variant="h6"
             noWrap
@@ -51,7 +52,7 @@ export const Header = (): JSX.Element => {
               textDecoration: 'none',
             }}
           >
-            Xonad Baltic
+            <img src='/images/xb_logo_hor.svg' />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>

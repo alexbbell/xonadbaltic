@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem/MenuItem"
 import { XBLogo } from "./logo"
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [ 'Main', 'Products', 'Contact us'];
 export const Header = (): JSX.Element => {
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -36,24 +36,11 @@ export const Header = (): JSX.Element => {
             <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-            <XBLogo width={100}  />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: 'flex',
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.2rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            <img src='/images/xb_logo_hor.svg' />
-          </Typography>
+          <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: 'center', alignSelf: 'center'}}>
+            <div><XBLogo style={{ flexGrow: 2, minWidth: '50px'}}  /></div>
+            <div><img src='/images/xb_logo_hor.svg' style={{ maxHeight: '30px'}} /></div>
+          </div>
+
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
             <IconButton
@@ -95,7 +82,7 @@ export const Header = (): JSX.Element => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#000', display: 'block' }}
+                sx={{ my: 2, color: '#000', display: 'block', whiteSpace: 'nowrap' }}
               >
                 {page}
               </Button>

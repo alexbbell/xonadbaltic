@@ -11,9 +11,25 @@ import Menu from "@mui/material/Menu"
 import Container from "@mui/material/Container"
 import MenuItem from "@mui/material/MenuItem/MenuItem"
 import { XBLogo } from "./logo"
+import Link from "next/link"
 
+export interface SiteLink {
+  key?: string
+  label: string
+  url: string
+}
 
-const pages = [ 'Main', 'Products', 'Contact us'];
+const pages: SiteLink[] = [
+  {
+    label: 'Main', url: '/'
+  },
+  {
+    label: 'Products', url: 'products'
+  },
+  {
+    label: 'Contact us', url: 'contacts'
+  }
+];
 export const Header = (): JSX.Element => {
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -25,6 +41,7 @@ export const Header = (): JSX.Element => {
 
     const handleCloseNavMenu = () => {
       setAnchorElNav(null);
+
     };
 
 
@@ -70,8 +87,9 @@ export const Header = (): JSX.Element => {
               sx={{ display: { xs: 'block', sm: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center', color: '#000' }}>{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+
+                  <Typography sx={{ textAlign: 'center', color: '#000' }}>{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -79,13 +97,14 @@ export const Header = (): JSX.Element => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#000', display: 'block', whiteSpace: 'nowrap' }}
-              >
-                {page}
-              </Button>
+              <Link
+              style={{ margin: '10px'}}
+                key={page.label}
+                href={page.url}>{page.label}</Link>
+              // <Button
+              //   key={page.label}
+              //   onClick={handleCloseNavMenu}
+              //   sx={{ my: 2, color: '#000', display: 'block', whiteSpace: 'nowrap' }}>{page.label}</Button>
             ))}
           </Box>
 

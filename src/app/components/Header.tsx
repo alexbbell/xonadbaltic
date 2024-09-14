@@ -1,7 +1,6 @@
 'use client'
 import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
-import Button from "@mui/material/Button"
 import IconButton from "@mui/material/IconButton"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
@@ -12,6 +11,8 @@ import Container from "@mui/material/Container"
 import MenuItem from "@mui/material/MenuItem/MenuItem"
 import { XBLogo } from "./logo"
 import Link from "next/link"
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export interface SiteLink {
   key?: string
@@ -31,6 +32,7 @@ const pages: SiteLink[] = [
   }
 ];
 export const Header = (): JSX.Element => {
+  const router = useRouter()
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
@@ -53,13 +55,17 @@ export const Header = (): JSX.Element => {
             <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: 'center', alignSelf: 'center'}}>
-            <div><XBLogo style={{ flexGrow: 2, minWidth: '50px'}}  /></div>
-            <div><img src='/images/xb_logo_hor.svg' style={{ maxHeight: '30px'}} /></div>
+          <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: 'normal', alignSelf: 'center'}}>
+           <Link href='/'>
+            <Image src='/images/xblogo_full.svg' alt="Xonad Baltic" width={350} height={50} style={{ flexGrow: 3}} className='logos'
+                          /></Link>
+            {/* <div><XBLogo style={{ flexGrow: 2, minWidth: '50px'}}  /></div>
+            <div>
+              <Image src='/images/xb_logo_hor.svg' width={300} height={25} style={{ maxHeight: '25px'}} alt="Xonad Baltic"/></div> */}
           </div>
 
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -84,10 +90,16 @@ export const Header = (): JSX.Element => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', sm: 'none' } }}
+              sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.label}
+                  onClick={ () => {
+                    handleCloseNavMenu()
+                    router.push(page.url)
+
+                  }}
+                  >
 
                   <Typography sx={{ textAlign: 'center', color: '#000' }}>{page.label}</Typography>
                 </MenuItem>
@@ -95,7 +107,7 @@ export const Header = (): JSX.Element => {
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <Link
               style={{ margin: '10px'}}

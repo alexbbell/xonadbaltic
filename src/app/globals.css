@@ -1,37 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('/fonts/Montserrat-Medium.woff2') format('woff2'),
+       url('/fonts/Montserrat-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('/fonts/Montserrat-Light.woff2') format('woff2'),
+       url('/fonts/Montserrat-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   /* color: var(--foreground);
   background: var(--background); */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat-Medium', Arial, Helvetica, sans-serif;
   color: #30055B;
-
   background: radial-gradient(circle at 50% 50%, #f3e2ff, #d17aff);
 }
 
 html, body {
   height: 100%;
   margin: 0px;
+  font-size: 20px;
 }
 
-@layer utilities {
+a, a:link, a:visited {
+  color: #171717;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #30055B;
+  transition: all 0.3s ease-in-out;
+}
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+
+
+.logos:hover {
+  filter: drop-shadow(3px 3px 10px #30055B) invert(15%);
+  transition: all 0.3s ease-in-out;
+  /* filter: contrast(200%); */
 }
 
 .ContentWrapper {
@@ -46,17 +69,22 @@ html, body {
 .container {
   padding: 10px;
   padding-right: 0;
+  width: 100%;
 }
 
 .container h1 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 0px;
   color: rgb(75, 34, 106);
 }
 
 .container p {
-  font-size: 16px;
+  font-family: 'Montserrat-Light';
+
   color: #4b226a;
+  font-weight: 100;
 }
 
 .container strong {
@@ -66,9 +94,9 @@ html, body {
 
 .gates {
   background: url('/images/gates.svg') ;
-  min-height: 300px;
+  height: 350px;
   min-width: 200px;
-  flex-grow: 4;
+  flex-grow: 5;
   background-repeat: no-repeat;
   background-position: top 0 right;
   background-size: contain;
@@ -76,7 +104,6 @@ html, body {
 }
 
 .footer {
-
   flex-grow: 0;
   display: flex;
   padding: 10px;
@@ -85,3 +112,123 @@ html, body {
   justify-content: center;
   background: #FFF;
 }
+
+.vrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  justify-items: stretch;
+  justify-items: center;
+  align-items: stretch;
+
+}
+.products {
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.vrow div {
+  width: 50%;
+  border-top: #76A070 1px solid;
+  border-left: #76A070 1px solid;
+  text-align: center;
+  align-items: stretch;
+  align-self: stretch;
+  align-content: center;
+  padding: 4px;
+  line-height: 1.5em;
+  flex-grow: 1;
+}
+
+.vrow div:nth-child(1) > label {
+  padding: 2px 15px;
+  margin: 3px 15px;
+  font-size: 14px;
+  background-color: #D2A6ED;
+  border-radius: 15px;
+  color: #2F005E;
+}
+
+.vrow div:nth-child(2) > label {
+  padding: 2px 15px;
+  margin: 3px 15px;
+  font-size: 14px;
+  display: inline-block;
+  background-color: #A1C59B;
+  color: #365830;
+  border-radius: 15px;
+}
+
+.products > div:first-child div:nth-child(1){
+  border-top-left-radius: 15px;
+}
+.products > div:first-child div:nth-child(2){
+  border-top-right-radius: 15px;
+}
+
+.products > div > div:nth-child(2) {
+  border-right: #76A070 1px solid;
+}
+
+.products > div:last-child > div:nth-child(1) {
+  border-bottom: #76A070 1px solid;
+  border-bottom-left-radius: 15px;
+}
+
+.products > div:last-child > div:nth-child(2) {
+  border-bottom: #76A070 1px solid;
+  border-bottom-right-radius: 15px;
+}
+
+/* ADDRESS */
+.addressHdr {
+  height: 110px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 90px;
+  line-height: 110px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+.address {
+  font-family: 'Montserrat-Light';
+  background: url('/images/mappoint.svg') no-repeat left center;
+  padding-left: 70px; min-height: 75px;
+  color: white;
+}
+/* identical to box height */
+/* Group 28 */
+.contacts {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+/* CONTACTS */
+.contacts .header {
+  text-align: left;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 67px;
+  /* identical to box height */
+  text-transform: capitalize;
+  color: #7D2D8A;
+}
+
+.contacts div {
+  text-align: right;
+  padding: 10px;
+  font-size: 18px;
+}
+
+
+

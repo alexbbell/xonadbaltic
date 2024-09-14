@@ -1,11 +1,13 @@
 import Grid from "@mui/material/Grid2";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <Grid container spacing={1} p={2}
     paddingRight={0}
      py={3} flexGrow={5} my={3}>
-      <Grid size={{ xs: 12, sm: 7, md: 8 }} alignItems={'stretch'} flexGrow={0}>
+      <Grid size={{ xs: 12, sm: 7 }} alignItems={'stretch'} flexGrow={0}>
+
         <div className='container' >
           <h1>We are Xonad Baltic!</h1>
           <p>
@@ -20,11 +22,11 @@ export default function Home() {
       <Grid display={{ xs: 'none', sm: 'flex' }} flexDirection={'column'}
         flexGrow={2}
 
-        size={{ xs: 12, sm: 5, md: 4 }}
+        size={{ xs: 12, sm: 5 }}
         justifyContent={{ xs: 'baseline', md: 'flex-end' }}
         alignSelf={{ xs: 'baseline', md: 'flex-end' }}
         marginTop={5} >
-        <div className='gates'>&nbsp;</div>
+        <Link href='/products'><div className='gates'></div></Link>
       </Grid>
       <Grid>
 

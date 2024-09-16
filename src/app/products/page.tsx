@@ -13,8 +13,8 @@ export default function RootLayout({
 
 <Grid container spacing={1} p={2} paddingRight={0} py={3} flexGrow={5} my={3}>
       <div className='container' >
-        <h1>Vitamins</h1>
 
+      <div className="btnlike" role="heading" aria-level={1} >Vitamins</div>
       <div className='products'>
         {
         vitamins.map( (v) => {
@@ -25,7 +25,9 @@ export default function RootLayout({
         })
         }
       </div>
-      <h1>Minerals</h1>
+
+      <div className="btnlike" role="heading" aria-level={1} >Minerals</div>
+
       <div className='products'>
         {
         minerals.map( (v) => {
@@ -37,7 +39,7 @@ export default function RootLayout({
         }
       </div>
 
-      <h1>Prebiotics</h1>
+      <div className="btnlike" role="heading" aria-level={1} >Prebiotics</div>
       <div className='products'>
         {
         prebiotics.map( (v) => {

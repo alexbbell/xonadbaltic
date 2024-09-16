@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from "@mui/material/Menu"
 import Container from "@mui/material/Container"
 import MenuItem from "@mui/material/MenuItem/MenuItem"
-import { XBLogo } from "./logo"
 import Link from "next/link"
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -55,14 +54,11 @@ export const Header = (): JSX.Element => {
             <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', alignItems: 'normal', alignSelf: 'center'}}>
-           <Link href='/'>
-            <Image src='/images/xblogo_full.svg' alt="Xonad Baltic" width={350} height={50} style={{ flexGrow: 3}} className='logos'
-                          /></Link>
-            {/* <div><XBLogo style={{ flexGrow: 2, minWidth: '50px'}}  /></div>
-            <div>
-              <Image src='/images/xb_logo_hor.svg' width={300} height={25} style={{ maxHeight: '25px'}} alt="Xonad Baltic"/></div> */}
-          </div>
+          <div className="logoContainer" >
+           <Link href='/'><Image src='/images/xblogo_full.svg' alt="Xonad Baltic"
+              width={ 350 } style={{padding: 0, margin: 0}}
+              height={60} className='logos'/></Link>
+              <div>Vitamin and mineral premixes for dairy food</div></div>
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>

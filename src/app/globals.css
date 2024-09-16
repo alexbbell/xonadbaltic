@@ -49,8 +49,53 @@ a:hover {
   }
 } */
 
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 5px 0px;
+  flex-basis: 0;
+  font-size: 2.2vh;
+  white-space: nowrap;
+  color: #32479D;
+}
+.logos {
+  flex-grow: 3;
+}
+@media (min-width: 200px) {
+  .logoContainer {
+    font-size: 1.2vh;
+  }
+  .logos {
+    min-width: 150px;
+    max-width: 200px;
+    height: auto;
+  }
+}
+@media (min-width: 600px) {
+  .logos {
+    min-width: 250px;
+    max-width: 350px;
+  }
+  .logoContainer {
+    font-size: 1.8vh;
+  }
+}
 
+@media (min-width: 960px) {
+  .logos {
+    min-width: 350px;
+    max-width: 450px;
+  }
+  .container {
+    padding-right: 0;
+    font-size: 2.2vh;
 
+  }
+}
 .logos:hover {
   filter: drop-shadow(3px 3px 10px #30055B) invert(15%);
   transition: all 0.3s ease-in-out;
@@ -63,13 +108,10 @@ a:hover {
   flex-grow: 4;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
   border-radius: 10px;
-
-
 }
+
 .container {
   padding: 10px;
-  padding-right: 0;
-  width: 100%;
 }
 
 .container h1 {
@@ -107,7 +149,9 @@ a:hover {
   flex-grow: 0;
   display: flex;
   padding: 10px;
-  flex-direction: row;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
   align-content: center;
   justify-content: center;
   background: #FFF;
@@ -139,6 +183,12 @@ a:hover {
   line-height: 1.5em;
   flex-grow: 1;
 }
+.vrow div:nth-child(1) {
+  width: 40%;
+}
+.vrow div:nth-child(2) {
+  line-height: 1.2em;
+}
 
 .vrow div:nth-child(1) > label {
   padding: 2px 15px;
@@ -146,6 +196,7 @@ a:hover {
   font-size: 14px;
   background-color: #D2A6ED;
   border-radius: 15px;
+  display: inline-block;
   color: #2F005E;
 }
 
@@ -231,4 +282,17 @@ a:hover {
 }
 
 
+.btnlike {
+  width: auto; height: auto; display: inline-block;
+  min-height: 60px; min-width: 180px;
+  padding-left: 70px;
+  padding-top: 35px;
+  background: url('/images/titles_bg.svg') no-repeat left center;
+  cursor: default;
+}
 
+a.btnlike:hover {
+  text-decoration: none;
+  filter: saturate(100);
+  cursor: pointer;
+}

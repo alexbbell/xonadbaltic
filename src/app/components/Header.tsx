@@ -24,7 +24,7 @@ const pages: SiteLink[] = [
     label: 'Main', url: '/'
   },
   {
-    label: 'Products', url: 'products'
+    label: 'Vitamins', url: 'vitamins'
   },
   {
     label: 'Contact us', url: 'contacts'

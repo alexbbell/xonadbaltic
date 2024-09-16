@@ -11,7 +11,7 @@ export default function RootLayout({
 
     return (
 
-<Grid container spacing={1} p={2} paddingRight={0} py={3} flexGrow={5} my={3}>
+<Grid container spacing={1} p={2} paddingRight={0} py={1} flexGrow={5} my={1}>
       <div className='container' >
 
       <div className="btnlike" role="heading" aria-level={1} >Vitamins</div>

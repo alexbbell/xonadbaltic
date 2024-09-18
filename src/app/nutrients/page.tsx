@@ -1,7 +1,18 @@
 import Grid from "@mui/material/Grid2"
 import { minerals, prebiotics, vitamins } from "./data"
+import type { Metadata } from 'next'
 
-export default function RootLayout({
+
+
+  export async function generateMetadata(
+  ): Promise<Metadata> {
+    // optionally access and extend (rather than replace) parent metadata
+    return {
+      title: 'Nutrients',
+    }
+  }
+
+export default function Page({
     //children,
   }: {
     children: React.ReactNode
@@ -11,9 +22,9 @@ export default function RootLayout({
 
     return (
 
-<Grid container spacing={1} p={2} paddingRight={0} py={1} flexGrow={5} my={1}>
+<Grid container spacing={1} p={{ xs:0, sm: 1, md: 2}} py={3} flexGrow={5} my={3}  >
       <div className='container' >
-
+      <h1>Nutrients</h1>
       <div className="btnlike" role="heading" aria-level={1} >Vitamins</div>
       <div className='products'>
         {

@@ -1,7 +1,8 @@
 'use client'
 import Grid from "@mui/material/Grid2"
 import { Whatsapp } from "../components/constants"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
 
 export default function RootLayout({
     //children,
@@ -10,7 +11,9 @@ export default function RootLayout({
   }) {
     const [hidden, setHidden] = useState(false)
 
-
+    useEffect(() => {
+      document.title = "Contact Us ";
+    }, []);
     return (
 <div>
         <Grid container spacing={1} p={{ xs:0, sm: 1, md: 2}}

@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { Whatsapp } from './constants'
 
 // const pages = ['Products', 'Pricing', 'Blog'];

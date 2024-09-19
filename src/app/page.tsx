@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <Grid container spacing={1} p={{ xs:0, sm: 1, md: 2}} paddingRight={0} py={3} flexGrow={5} my={3}>
-      <Grid size={{ xs: 12, sm: 7 }} alignItems={'stretch'} flexGrow={0} flexBasis={0}>
+      <Grid size={{ xs: 12, sm: 7 }} alignItems={'stretch'} flexGrow={1} flexBasis={0}>
 
         <div className='container' >
           <h1>We are Xonad Baltic</h1>

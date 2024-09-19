@@ -21,13 +21,13 @@ export interface SiteLink {
 
 const pages: SiteLink[] = [
   {
-    label: 'Main', url: '/'
+    label: 'Home', url: '/'
   },
   {
     label: 'Nutrients', url: 'nutrients'
   },
   {
-    label: 'Contact us', url: 'contacts'
+    label: 'Contacts', url: 'contacts'
   }
 ];
 export const Header = (): JSX.Element => {

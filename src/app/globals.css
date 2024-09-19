@@ -24,8 +24,12 @@ body {
   background: var(--background); */
   font-family: 'Montserrat-Medium', Arial, Helvetica, sans-serif;
   color: #30055B;
-  background: radial-gradient(circle at 50% 50%, #f3e2ff, #d17aff);
+  /* background: radial-gradient(circle at 50% 50%, #f3e2ff, #d17aff); */
+  background: radial-gradient(circle at 50% 50%, #f3e2ff, #ccb3da);
+
+
 }
+
 
 html, body {
   height: 100%;

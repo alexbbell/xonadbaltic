@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+'use client'
 import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "./components/Header";
@@ -6,6 +6,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import theme from "./theme";
 import { Footer } from "./components/Footer";
+import { GoogleAnalytics } from 'nextjs-google-analytics'
+
+const GID = process.env.NEXT_PUBLIC_GID
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,10 +21,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Xonad Baltic",
-  description: "Vitamin and mineral premixes for dairy food",
-};
 
 export default function RootLayout({
   children,
@@ -30,6 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+      <head>
+        <title> Xonad Baltic </title>
+        <meta name="description" content="Vitamin and mineral premixes for dairy food" />
+        <meta property="og:description" content="Vitamin and mineral premixes for dairy food" />
+
+      </head>
       <body
       style={{ height: '100%'}}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -43,6 +49,7 @@ export default function RootLayout({
 
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
+            <GoogleAnalytics gaMeasurementId={GID} trackPageViews />
             <Header />
             <div  className='ContentWrapper'>
 

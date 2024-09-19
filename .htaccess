@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+
+</IfModule>
+
+Redirect 301 /public/Aleksei_Beliaev_cv2022v5.pdf https://alexey.beliaeff.ru/public/Aleksei_Beliaev_Software_developer.pdf
+Redirect 301 /public/Aleksei_Beliaev_cv2022v6.pdf https://alexey.beliaeff.ru/public/Aleksei_Beliaev_Software_developer.pdf
+
+
+    <IfModule mod_headers.c>
+        SetEnvIf Origin "http(s)?://(www\.)?(markimarta.com|markimarta.ru|localhost|alexey.beliaeff.ru)$" AccessControlAllowOrigin=$0
+        Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+        Header merge Vary Origin
+    </IfModule>

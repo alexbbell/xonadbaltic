@@ -2,10 +2,14 @@
 import Grid from "@mui/material/Grid2";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+//import { useReducer } from "react";
 
 export default function Home() {
 
   const [fptext, setFptext] = useState('')
+  // const [multiplication, dispatch] = useReducer((state, action) => {
+  //   return state * action;
+  // }, 50);
 
   useEffect( () => {
     fetch('/data/content.json').then(res => {

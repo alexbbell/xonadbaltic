@@ -9,7 +9,7 @@ export const Footer = (): JSX.Element => {
     return (
         <div className="footer">
             <div>
-                Xonad Est
+                Xonad Baltic
             </div>
             <div>
                 <label style={{ color: '#45703E' }}>WhatsApp: </label>
